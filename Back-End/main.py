@@ -33,48 +33,6 @@ class VecinoIn(BaseModel):
     Telefono: int
     Socio: int
     Num_Casa: int
-
-# --- Crear tablas si no existen ---
-def init_db():
-    conn = sqlite3.connect(DATABASE)
-    cursor = conn.cursor()
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Contabilidad (
-        Rut TEXT,
-        Monto INTEGER NOT NULL,
-        Tipo INTEGER NOT NULL,
-        Fecha TEXT NOT NULL CHECK(length(Fecha) <= 10),
-        Descripcion TEXT CHECK(length(Descripcion) <= 100)
-    )""")
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Dirigente (
-        Clave TEXT NOT NULL,
-        Rut TEXT NOT NULL
-    )""")
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Invitado (
-        Rut TEXT NOT NULL,
-        Num_Solicitud INTEGER
-    )""")
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS Vecino (
-        Rut TEXT NOT NULL CHECK(length(Rut) <= 12),
-        Primer_Nombre TEXT NOT NULL CHECK(length(Primer_Nombre) <= 20),
-        Segundo_Nombre TEXT NOT NULL CHECK(length(Segundo_Nombre) <= 20),
-        Primer_Apellido TEXT NOT NULL CHECK(length(Primer_Apellido) <= 20),
-        Segundo_Apellido TEXT NOT NULL CHECK(length(Segundo_Apellido) <= 20),
-        Sexo TEXT NOT NULL CHECK(length(Sexo) <= 20),
-        Pasaje TEXT NOT NULL CHECK(length(Pasaje) <= 35),
-        Poblacion TEXT NOT NULL CHECK(length(Poblacion) <= 35),
-        Telefono INTEGER,
-        Socio INTEGER NOT NULL,
-        Num_Casa INTEGER NOT NULL
-    )""")
-    conn.commit()
-    conn.close()
-
-init_db()
-
 # --- Endpoints para Contabilidad ---
 @app.get("/contabilidad/")
 def Obtener_contabilidad():
