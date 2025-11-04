@@ -1,0 +1,166 @@
+/* Layout general */
+.contabilidad-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Contenido principal centrado */
+.contenido {
+  margin-top: 60px;
+  margin-left: 650px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: calc(100vh - 60px);
+  text-align: center;
+}
+
+/* Título principal */
+.contenido h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Formulario de búsqueda */
+.formulario-edicion {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.formulario-edicion input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 280px;
+}
+
+.formulario-edicion button {
+  padding: 0.7rem 1.4rem;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.formulario-edicion button:hover {
+  background-color: #4e078c;
+}
+
+/* Validación visual */
+.input-error {
+  border: 2px solid #d32f2f;
+  background-color: #ffe6e6;
+}
+
+.mensaje-error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  text-align: center;
+}
+
+/* Cuadro de edición centrado y más ancho */
+.cuadro-edicion {
+  background-color: #ffffff; /* 🔒 Fondo sólido, sin transparencia */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+  /* 🔧 Aumentamos el ancho en 50%: de 600px → 900px */
+  max-width: 900px;
+  width: 100%;
+
+  padding: 2.5rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔧 Centra los campos horizontalmente */
+  gap: 1.2rem;
+  animation: aparecerModal 0.3s ease-out;
+}
+
+/* Título del cuadro */
+.cuadro-edicion h2 {
+  color: #6a0dad;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Campos del formulario */
+.cuadro-edicion input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px; /* 🔧 Limita el ancho de cada campo */
+}
+
+.cuadro-edicion input:disabled {
+  background-color: #f0f0f0;
+  color: #999;
+}
+
+.cuadro-edicion label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+}
+
+/* Botón guardar */
+.btn-guardar {
+  padding: 0.9rem 1.6rem;
+  background-color: #00c4cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-guardar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-guardar:hover:not(:disabled) {
+  background-color: #009fa3;
+}
+
+/* Animación suave */
+@keyframes aparecerModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.mensaje-exito {
+  color: #d32f2f;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,24 @@
+.contabilidad-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.contenido {
+  margin-top: 60px; /* espacio para navbar */
+  margin-left: 240px; /* espacio para barra lateral */
+  padding: 2rem;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  text-align: center;
+}
+
+.contenido h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
