@@ -1,5 +1,5 @@
 ### Requisitos Funcionales
-| ID | Requisito | |
+| ID | Requisito |
 |:---|:---|
 | RF-01 | El sistema debe permitir al líder crear y convocar un ensayo ingresando fecha, hora de inicio/término y lugar. | 
 | RF-02 | El sistema debe emitir una notificación push automática a todos los integrantes de la banda al publicarse una nueva convocatoria. | 
